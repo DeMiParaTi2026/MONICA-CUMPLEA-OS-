@@ -381,7 +381,7 @@
       <span class="font-label-sm text-label-sm text-on-surface-variant">MJ × Portugal. The Man</span>
     </button>
   </div>
-  <audio id="mixtapeAudio" preload="metadata"></audio>
+  <audio autoplay id="mixtapeAudio" preload="auto"></audio>
 </section>
 <!-- Cassette Tape Mixtape Player -->
 
@@ -655,6 +655,21 @@
   }
 
   updateTrack(false);
+
+  // Intenta iniciar al abrir. En móviles que bloquean el audio automático,
+  // comienza con el primer toque o tecla en cualquier lugar de la invitación.
+  function startBackgroundMusic() {
+    if (!mixtapeAudio || !mixtapeAudio.paused) return;
+    if (loopVideo) loopVideo.muted = true;
+    mixtapeAudio.play().catch(() => {});
+  }
+
+  if (mixtapeAudio) {
+    mixtapeAudio.play().catch(() => {
+      document.addEventListener('pointerdown', startBackgroundMusic, { once: true, passive: true });
+      document.addEventListener('keydown', startBackgroundMusic, { once: true });
+    });
+  }
 </script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.5)]" data-active-classes="text-primary drop-shadow-[0_0_8px_rgba(255,71,156,0.8)]"><div class="flex justify-around items-center h-20 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center gap-1 w-16 h-16 transition-colors text-primary drop-shadow-[0_0_8px_rgba(255,71,156,0.8)]" data-path="party-invite" href="#"><span class="material-symbols-outlined text-[22px]">celebration</span><span class="font-label-sm text-label-sm tracking-wider uppercase">Party</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-16 text-on-surface-variant hover:text-on-surface transition-colors" data-path="party-lineup" href="#"><span class="material-symbols-outlined text-[22px]">schedule</span><span class="font-label-sm text-label-sm tracking-wider uppercase">Track</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-16 text-on-surface-variant hover:text-on-surface transition-colors" data-path="mixtape-vault" href="#"><span class="material-symbols-outlined text-[22px]">mobile_share_stack</span><span class="font-label-sm text-label-sm tracking-wider uppercase">Mixtape</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-16 text-secondary hover:text-white transition-colors" data-path="arcade-rsvp" href="#"><span class="material-symbols-outlined text-[22px] drop-shadow-[0_0_6px_rgba(0,238,252,0.8)]">local_activity</span><span class="font-label-sm text-label-sm tracking-wider uppercase text-secondary font-bold">RSVP</span></a></div></nav>
 
 
