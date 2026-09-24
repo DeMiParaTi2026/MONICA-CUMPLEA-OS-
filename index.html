@@ -265,9 +265,9 @@
       <div class="cassette-track responsive-row mt-2 bg-white/90 border-b border-dashed border-[#ff479c]/60 px-2.5 py-1.5 rounded flex items-center justify-between shadow-sm">
         <div class="flex flex-col min-w-0">
           <span class="font-label-sm text-[10px] tracking-widest uppercase text-[#ff479c] font-bold">TRACK ACTUAL // 80s VIBES</span>
-          <span class="font-headline-sm text-headline-sm text-[#121028] font-bold tracking-tight truncate" id="mixtapeTrackTitle">Take On Me</span>
+          <span class="font-headline-sm text-headline-sm text-[#121028] font-bold tracking-tight truncate" id="mixtapeTrackTitle">Stayin' Alive Ft. 2Pac</span>
         </div>
-        <span class="font-label-sm text-[11px] font-mono text-[#5b3f48] shrink-0 ml-2 bg-[#ffebf3] px-2 py-0.5 rounded" id="mixtapeArtist">A-ha • 1985</span>
+        <span class="font-label-sm text-[11px] font-mono text-[#5b3f48] shrink-0 ml-2 bg-[#ffebf3] px-2 py-0.5 rounded" id="mixtapeArtist">Bee Gees × 2Pac • Jaisef Remix</span>
       </div>
 
       <!-- Clear Smoked Center Viewing Window (Tape Spools + Tape Bridge) -->
@@ -340,11 +340,11 @@
   <!-- Glowing Audio Progress Timeline Bar -->
   <div class="flex flex-col gap-1 px-1 mt-1">
     <div class="flex justify-between items-center font-label-sm text-[10px] text-on-surface-variant font-mono">
-      <span class="text-secondary drop-shadow-[0_0_6px_#00eefc]">02:14</span>
-      <span class="text-primary">03:45</span>
+      <span class="text-secondary drop-shadow-[0_0_6px_#00eefc]" id="audioCurrentTime">00:00</span>
+      <span class="text-primary" id="audioDuration">03:54</span>
     </div>
-    <div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden p-[1px] shadow-inner">
-      <div class="bg-gradient-to-r from-primary via-primary-container to-secondary w-2/3 h-full rounded-full shadow-[0_0_10px_#00eefc]"></div>
+    <div aria-label="Progreso de la canción" class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden p-[1px] shadow-inner cursor-pointer" id="audioProgressTrack" role="slider" tabindex="0">
+      <div class="bg-gradient-to-r from-primary via-primary-container to-secondary w-0 h-full rounded-full shadow-[0_0_10px_#00eefc]" id="audioProgressBar"></div>
     </div>
   </div>
 
@@ -355,7 +355,7 @@
       <span class="font-label-sm text-[9px] tracking-wider uppercase text-on-surface-variant">REWIND</span>
     </button>
     <button aria-label="Reproducir playlist" class="h-11 rounded-lg bg-primary-container border-b-4 border-[#640036] active:border-b-0 active:translate-y-1 text-on-primary flex flex-col items-center justify-center shadow-[0_0_16px_rgba(255,71,156,0.6)] transition-all hover:scale-[1.02]" id="playTrackBtn">
-      <span class="material-symbols-outlined text-[22px]" id="playIcon">pause</span>
+      <span class="material-symbols-outlined text-[22px]" id="playIcon">play_arrow</span>
       <span class="font-label-sm text-[9px] tracking-wider uppercase font-bold">PLAY / PAUSE</span>
     </button>
     <button aria-label="Siguiente pista" class="h-11 rounded-lg bg-surface-container border-b-4 border-[#0d0b22] active:border-b-0 active:translate-y-1 text-on-surface hover:text-secondary flex flex-col items-center justify-center transition-all shadow-md" id="nextTrackBtn">
@@ -366,28 +366,22 @@
 
   <!-- Tracklist Items -->
   <div class="flex flex-col gap-1.5 pt-1">
-    <div class="track-item responsive-row flex items-center justify-between p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors">
+    <button class="track-item responsive-row flex items-center justify-between p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors text-left" data-track-index="0" type="button">
       <div class="flex items-center gap-2">
         <span class="font-label-sm text-label-sm text-primary font-bold">01</span>
-        <span class="font-body-sm text-body-sm text-on-surface font-medium">Girls Just Want to Have Fun</span>
+        <span class="font-body-sm text-body-sm text-on-surface font-medium">Stayin' Alive Ft. 2Pac</span>
       </div>
-      <span class="font-label-sm text-label-sm text-on-surface-variant">Cyndi Lauper</span>
-    </div>
-    <div class="track-item responsive-row flex items-center justify-between p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors">
+      <span class="font-label-sm text-label-sm text-on-surface-variant">Jaisef Remix</span>
+    </button>
+    <button class="track-item responsive-row flex items-center justify-between p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors text-left" data-track-index="1" type="button">
       <div class="flex items-center gap-2">
         <span class="font-label-sm text-label-sm text-secondary font-bold">02</span>
-        <span class="font-body-sm text-body-sm text-on-surface font-medium">Billie Jean</span>
+        <span class="font-body-sm text-body-sm text-on-surface font-medium">Beat It Still</span>
       </div>
-      <span class="font-label-sm text-label-sm text-on-surface-variant">Michael Jackson</span>
-    </div>
-    <div class="track-item responsive-row flex items-center justify-between p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors">
-      <div class="flex items-center gap-2">
-        <span class="font-label-sm text-label-sm text-tertiary font-bold">03</span>
-        <span class="font-body-sm text-body-sm text-on-surface font-medium">Sweet Child O' Mine</span>
-      </div>
-      <span class="font-label-sm text-label-sm text-on-surface-variant">Guns N' Roses</span>
-    </div>
+      <span class="font-label-sm text-label-sm text-on-surface-variant">MJ × Portugal. The Man</span>
+    </button>
   </div>
+  <audio id="mixtapeAudio" preload="metadata"></audio>
 </section>
 <!-- Cassette Tape Mixtape Player -->
 
@@ -554,49 +548,113 @@
     if (secEl) secEl.textContent = String(s).padStart(2, '0');
   }, 1000);
 
-  // Mixtape tracklist toggler
+  // Reproductor real del cassette: archivos incluidos junto al HTML
   const tracks = [
-    { title: 'Take On Me', artist: 'A-ha • 1985' },
-    { title: 'Girls Just Want...', artist: 'Cyndi Lauper • 1983' },
-    { title: 'Billie Jean', artist: 'Michael Jackson • 1982' },
-    { title: 'Sweet Child O\' Mine', artist: 'Guns N\' Roses • 1987' }
+    { title: "Stayin' Alive Ft. 2Pac", artist: 'Bee Gees × 2Pac • Jaisef Remix', src: 'stayin-alive-remix.mp3' },
+    { title: 'Beat It Still', artist: 'Michael Jackson × Portugal. The Man', src: 'beat-it-still-remix.mp3' }
   ];
   let currentTrackIdx = 0;
+  const mixtapeAudio = document.getElementById('mixtapeAudio');
   const trackTitleEl = document.getElementById('mixtapeTrackTitle');
   const artistEl = document.getElementById('mixtapeArtist');
   const nextTrackBtn = document.getElementById('nextTrackBtn');
   const prevTrackBtn = document.getElementById('prevTrackBtn');
   const playTrackBtn = document.getElementById('playTrackBtn');
   const playIcon = document.getElementById('playIcon');
+  const currentTimeEl = document.getElementById('audioCurrentTime');
+  const durationEl = document.getElementById('audioDuration');
+  const progressTrack = document.getElementById('audioProgressTrack');
+  const progressBar = document.getElementById('audioProgressBar');
+  const trackButtons = document.querySelectorAll('[data-track-index]');
 
-  function updateTrack() {
+  function formatTime(seconds) {
+    if (!Number.isFinite(seconds)) return '00:00';
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0');
+  }
+
+  function updateTrack(autoplay = false) {
     if (trackTitleEl && artistEl) {
       trackTitleEl.textContent = tracks[currentTrackIdx].title;
       artistEl.textContent = tracks[currentTrackIdx].artist;
+    }
+    if (!mixtapeAudio) return;
+    mixtapeAudio.src = tracks[currentTrackIdx].src;
+    mixtapeAudio.load();
+    if (currentTimeEl) currentTimeEl.textContent = '00:00';
+    if (progressBar) progressBar.style.width = '0%';
+    trackButtons.forEach((button, index) => {
+      button.classList.toggle('ring-1', index === currentTrackIdx);
+      button.classList.toggle('ring-primary', index === currentTrackIdx);
+    });
+    if (autoplay) {
+      if (loopVideo) loopVideo.muted = true;
+      if (soundIcon) soundIcon.textContent = 'volume_off';
+      if (soundText) soundText.textContent = 'Mute';
+      mixtapeAudio.play().catch(() => {});
     }
   }
 
   if (nextTrackBtn) {
     nextTrackBtn.addEventListener('click', () => {
       currentTrackIdx = (currentTrackIdx + 1) % tracks.length;
-      updateTrack();
+      updateTrack(true);
     });
   }
 
   if (prevTrackBtn) {
     prevTrackBtn.addEventListener('click', () => {
       currentTrackIdx = (currentTrackIdx - 1 + tracks.length) % tracks.length;
-      updateTrack();
+      updateTrack(true);
     });
   }
 
-  let isPlaying = false;
-  if (playTrackBtn) {
+  if (playTrackBtn && mixtapeAudio) {
     playTrackBtn.addEventListener('click', () => {
-      isPlaying = !isPlaying;
-      playIcon.textContent = isPlaying ? 'pause' : 'play_arrow';
+      if (mixtapeAudio.paused) {
+        if (loopVideo) loopVideo.muted = true;
+        if (soundIcon) soundIcon.textContent = 'volume_off';
+        if (soundText) soundText.textContent = 'Mute';
+        mixtapeAudio.play().catch(() => {});
+      } else {
+        mixtapeAudio.pause();
+      }
     });
   }
+
+  trackButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      currentTrackIdx = Number(button.dataset.trackIndex);
+      updateTrack(true);
+    });
+  });
+
+  if (mixtapeAudio) {
+    mixtapeAudio.addEventListener('play', () => { if (playIcon) playIcon.textContent = 'pause'; });
+    mixtapeAudio.addEventListener('pause', () => { if (playIcon) playIcon.textContent = 'play_arrow'; });
+    mixtapeAudio.addEventListener('loadedmetadata', () => {
+      if (durationEl) durationEl.textContent = formatTime(mixtapeAudio.duration);
+    });
+    mixtapeAudio.addEventListener('timeupdate', () => {
+      if (currentTimeEl) currentTimeEl.textContent = formatTime(mixtapeAudio.currentTime);
+      if (progressBar && mixtapeAudio.duration) progressBar.style.width = ((mixtapeAudio.currentTime / mixtapeAudio.duration) * 100) + '%';
+    });
+    mixtapeAudio.addEventListener('ended', () => {
+      currentTrackIdx = (currentTrackIdx + 1) % tracks.length;
+      updateTrack(true);
+    });
+  }
+
+  if (progressTrack && mixtapeAudio) {
+    progressTrack.addEventListener('click', (event) => {
+      const rect = progressTrack.getBoundingClientRect();
+      const ratio = Math.min(1, Math.max(0, (event.clientX - rect.left) / rect.width));
+      if (mixtapeAudio.duration) mixtapeAudio.currentTime = ratio * mixtapeAudio.duration;
+    });
+  }
+
+  updateTrack(false);
 </script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.5)]" data-active-classes="text-primary drop-shadow-[0_0_8px_rgba(255,71,156,0.8)]"><div class="flex justify-around items-center h-20 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center gap-1 w-16 h-16 transition-colors text-primary drop-shadow-[0_0_8px_rgba(255,71,156,0.8)]" data-path="party-invite" href="#"><span class="material-symbols-outlined text-[22px]">celebration</span><span class="font-label-sm text-label-sm tracking-wider uppercase">Party</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-16 text-on-surface-variant hover:text-on-surface transition-colors" data-path="party-lineup" href="#"><span class="material-symbols-outlined text-[22px]">schedule</span><span class="font-label-sm text-label-sm tracking-wider uppercase">Track</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-16 text-on-surface-variant hover:text-on-surface transition-colors" data-path="mixtape-vault" href="#"><span class="material-symbols-outlined text-[22px]">mobile_share_stack</span><span class="font-label-sm text-label-sm tracking-wider uppercase">Mixtape</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-16 text-secondary hover:text-white transition-colors" data-path="arcade-rsvp" href="#"><span class="material-symbols-outlined text-[22px] drop-shadow-[0_0_6px_rgba(0,238,252,0.8)]">local_activity</span><span class="font-label-sm text-label-sm tracking-wider uppercase text-secondary font-bold">RSVP</span></a></div></nav>
 
 
