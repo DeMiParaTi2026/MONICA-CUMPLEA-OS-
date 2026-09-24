@@ -1,0 +1,605 @@
+<!DOCTYPE html><html class="dark" lang="es" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Space+Mono:wght@700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { secondary: "#d3fbff", "on-primary": "#640036", "surface-tint": "#ffb0ca", "primary-fixed": "#ffd9e3", "on-tertiary-container": "#3f0072", "secondary-container": "#00eefc", "surface-container-highest": "#34324b", "on-primary-fixed-variant": "#8d004e", "on-secondary-container": "#00686f", "on-secondary-fixed-variant": "#004f54", "on-background": "#e4dfff", "tertiary-fixed": "#efdbff", "on-tertiary": "#480081", "tertiary-fixed-dim": "#dcb8ff", "surface-container-low": "#1b1930", "surface-container-lowest": "#0d0b22", tertiary: "#dcb8ff", "inverse-on-surface": "#302e46", "on-error": "#690005", "on-tertiary-fixed-variant": "#6700b5", "secondary-fixed-dim": "#00dbe9", "on-primary-fixed": "#3e001f", "on-error-container": "#ffdad6", "on-secondary-fixed": "#002022", "surface-variant": "#34324b", "on-surface": "#e4dfff", "inverse-primary": "#b90068", "on-surface-variant": "#e3bdc7", "primary-container": "#ff479c", "surface-container": "#1f1d34", "on-tertiary-fixed": "#2c0051", "inverse-surface": "#e4dfff", outline: "#aa8892", "surface-bright": "#393650", "outline-variant": "#5b3f48", "on-secondary": "#00363a", error: "#ffb4ab", "primary-fixed-dim": "#ffb0ca", "on-primary-container": "#58002f", primary: "#ffb0ca", surface: "#121028", background: "#121028", "tertiary-container": "#b56eff", "surface-dim": "#121028", "error-container": "#93000a", "surface-container-high": "#292740", "secondary-fixed": "#7df4ff" }, borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" }, spacing: { gutter: "1.5rem", "margin-mobile": "1.25rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-md": "1rem", "gutter-mobile": "1rem", "space-xl": "2.5rem", margin: "3rem", "space-xs": "0.25rem" }, fontFamily: { "body-sm": ["Space Grotesk"], "headline-md": ["Syne"], "headline-lg": ["Syne"], "label-sm": ["Space Mono"], "headline-lg-mobile": ["Syne"], "headline-sm": ["Syne"], "label-md": ["Space Mono"], "display-hero-mobile": ["Syne"], "body-md": ["Space Grotesk"], "body-lg": ["Space Grotesk"], "display-hero": ["Syne"], "label-lg": ["Space Mono"] }, fontSize: { "body-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }], "headline-md": ["28px", { lineHeight: "36px", letterSpacing: "0.02em", fontWeight: "700" }], "headline-lg": ["40px", { lineHeight: "48px", letterSpacing: "0.04em", fontWeight: "700" }], "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.15em", fontWeight: "700" }], "headline-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "0.02em", fontWeight: "700" }], "headline-sm": ["22px", { lineHeight: "30px", letterSpacing: "0.01em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "700" }], "display-hero-mobile": ["38px", { lineHeight: "44px", letterSpacing: "0.05em", fontWeight: "800" }], "body-md": ["15px", { lineHeight: "24px", fontWeight: "400" }], "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }], "display-hero": ["64px", { lineHeight: "72px", letterSpacing: "0.08em", fontWeight: "800" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.12em", fontWeight: "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;background-color:#121028;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { width: 100%; max-width: 100%; overflow-x: clip; -webkit-text-size-adjust: 100%; }
+    img, video, iframe, svg { max-width: 100%; }
+    button, input { min-width: 0; }
+    header > div, nav > div, main > div { width: 100%; max-width: 760px; margin-inline: auto; }
+    main > div { padding-inline: clamp(1rem, 4vw, 2rem) !important; gap: clamp(1rem, 3vw, 1.75rem) !important; }
+    main section, main footer { min-width: 0; }
+    .vhs-responsive { width: min(100%, 430px) !important; margin-inline: auto; }
+    .responsive-row { min-width: 0; gap: .5rem; }
+    .responsive-row > * { min-width: 0; }
+    .allow-wrap { white-space: normal !important; overflow-wrap: anywhere; }
+
+    @media (min-width: 768px) {
+      header > div { padding-inline: 2rem !important; }
+      main { padding-top: 5rem !important; }
+      main > div { padding-bottom: 3rem !important; }
+      nav > div { height: 4.5rem !important; }
+      nav a { height: 3.75rem !important; }
+    }
+
+    @media (max-width: 479px) {
+      header > div { height: 3.75rem !important; padding-inline: .75rem !important; }
+      header > div > div:first-child { min-width: 0; gap: .4rem !important; }
+      header > div > div:first-child > div:first-child { padding-inline: .45rem !important; flex: 0 0 auto; }
+      header > div > div:first-child > div:nth-child(2) { max-width: min(31vw, 118px) !important; }
+      header > div > div:last-child { gap: .35rem !important; }
+      header button { width: 2.25rem !important; height: 2.25rem !important; }
+      header > div > div:last-child > div { width: 1.85rem !important; height: 1.85rem !important; }
+      main { padding-top: 3.75rem !important; padding-bottom: 5.25rem !important; }
+      main > div { padding-inline: .75rem !important; }
+      .hero-copy p:first-child { font-size: clamp(.66rem, 3.2vw, .78rem) !important; letter-spacing: .18em !important; }
+      .hero-copy h2 { font-size: clamp(2rem, 10.8vw, 2.7rem) !important; line-height: 1.08 !important; letter-spacing: .035em !important; }
+      .retro-strip { gap: .3rem !important; }
+      .retro-strip > span:not(.material-symbols-outlined) { font-size: clamp(.54rem, 2.6vw, .68rem) !important; letter-spacing: .08em !important; line-height: 1.25; }
+      .vhs-topbar, .vhs-bottombar { padding-inline: .65rem !important; }
+      .vhs-topbar { flex-wrap: wrap; row-gap: .25rem; }
+      .vhs-topbar > div:last-child { margin-left: auto; }
+      .video-overlay-date { font-size: .5rem !important; letter-spacing: .08em !important; }
+      .video-loop-label { font-size: .48rem !important; letter-spacing: .04em !important; }
+      .video-sound-text { display: none; }
+      #videoSoundBtn { width: 2rem; height: 2rem; padding: 0 !important; justify-content: center; }
+      .details-heading, .countdown-heading, .mixtape-heading, .cassette-meta, .cassette-track, .rsvp-heading { flex-wrap: wrap; row-gap: .35rem; }
+      .details-heading > span:first-child, .countdown-heading > span:first-child { flex: 1 1 12rem; }
+      .details-grid { grid-template-columns: 1fr 1fr !important; }
+      .details-grid > div { padding: .65rem !important; }
+      .details-grid .text-headline-sm { font-size: clamp(1.1rem, 6vw, 1.35rem) !important; }
+      .countdown-grid { gap: .3rem !important; padding: .55rem !important; }
+      .countdown-grid > div { padding: .45rem .15rem !important; }
+      .countdown-grid .text-headline-md { font-size: clamp(1.3rem, 7vw, 1.7rem) !important; line-height: 1.2 !important; }
+      .countdown-grid .text-label-sm { font-size: clamp(.45rem, 2.2vw, .59rem) !important; letter-spacing: .04em !important; }
+      .cassette-card { padding: .7rem !important; }
+      .cassette-meta > div { flex-wrap: wrap; }
+      .cassette-meta { font-size: .55rem !important; }
+      .cassette-track > div { flex: 1 1 9rem; }
+      #mixtapeArtist { margin-left: 0 !important; }
+      .cassette-window { padding-inline: .4rem !important; }
+      .cassette-window .spool { width: 2.5rem !important; height: 2.5rem !important; }
+      .cassette-window .spool > div { width: 1.9rem !important; height: 1.9rem !important; }
+      .cassette-footer { gap: .3rem; flex-wrap: wrap; justify-content: center !important; text-align: center; }
+      .cassette-head-access { width: min(12rem, 80%) !important; }
+      .track-item { align-items: flex-start !important; gap: .45rem; }
+      .track-item > div { min-width: 0; flex: 1 1 auto; }
+      .track-item > span:last-child { flex: 0 1 38%; text-align: right; overflow-wrap: anywhere; }
+      #rsvpSubmitBtn { padding-inline: .65rem !important; font-size: .66rem !important; letter-spacing: .055em !important; }
+      footer .rounded-full { max-width: 100%; }
+      footer .rounded-full span { white-space: normal; overflow-wrap: anywhere; text-align: center; }
+      nav > div { height: 4.5rem !important; }
+      nav a { width: 25% !important; height: 4rem !important; }
+      nav a span:last-child { font-size: .5rem !important; letter-spacing: .04em !important; }
+    }
+
+    @media (max-width: 339px) {
+      header > div > div:first-child > div:nth-child(2), header > div > div:last-child > div { display: none; }
+      .details-grid { grid-template-columns: 1fr !important; }
+      .vhs-bottombar > div:last-child, .video-overlay-date, .video-loop-label, .countdown-heading > span:last-child { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head><body class="bg-surface text-on-surface flex flex-col min-h-screen selection:bg-primary selection:text-on-primary"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.6)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="flex items-center justify-center px-space-sm py-space-xs bg-surface-container-high rounded-full shadow-[0_0_12px_rgba(255,71,156,0.4)]"><span class="material-symbols-outlined text-primary text-[20px]">bolt</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary ml-1">LEVEL 40</span></div><div class="overflow-hidden whitespace-nowrap max-w-[150px] relative flex items-center"><style>@keyframes marqueeText { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }</style><span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wide drop-shadow-[0_0_8px_rgba(255,176,202,0.5)] inline-block" style="animation-duration: 8s; animation-timing-function: linear; animation-iteration-count: infinite; animation-direction: normal; animation-fill-mode: none; animation-play-state: running; animation-name: marqueeText; animation-timeline: auto; animation-range: normal; white-space: nowrap;">INVITACIÓN FIESTA OCHENTERA</span></div></div><div class="flex items-center gap-space-sm"><button aria-label="Toggle Mixtape Synth Sound" class="w-11 h-11 flex items-center justify-center rounded-full bg-surface-container text-secondary hover:text-on-surface transition-colors shadow-[0_0_10px_rgba(0,238,252,0.25)]"><span class="material-symbols-outlined text-[20px]">graphic_eq</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_10px_rgba(255,176,202,0.5)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-margin-mobile gap-space-lg pb-space-xl overflow-x-hidden">
+<!-- Retrowave Sun & Grid Glow Header Title -->
+<section class="flex flex-col items-center text-center mt-space-md relative">
+<div class="absolute -top-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -top-6 w-48 h-48 bg-secondary-container/20 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Badge level milestone -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high shadow-[0_0_18px_rgba(255,71,156,0.35)]">
+<span class="material-symbols-outlined text-primary-container text-[18px]">electric_bolt</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">EDICIÓN ESPECIAL</span>
+</div>
+<!-- Neon Main Typography -->
+<div class="hero-copy mt-space-sm relative"><p class="font-label-md text-label-md uppercase tracking-[0.3em] text-secondary drop-shadow-[0_0_8px_rgba(0,238,252,0.8)]">REGRESEMOS A LOS 80s</p><p class="font-headline-sm text-headline-sm italic text-primary-fixed drop-shadow-[0_0_10px_rgba(255,176,202,0.7)] mt-1">Disfrutemos juntos</p><h2 class="font-display-hero-mobile text-display-hero-mobile text-on-surface uppercase tracking-wider drop-shadow-[0_0_14px_rgba(255,71,156,0.9)] mt-1">¡MIS 40 AÑOS!</h2></div>
+<!-- Retro Horizon Strip -->
+<div class="retro-strip w-full flex items-center justify-center gap-2 mt-space-xs">
+<div class="h-[2px] flex-1 bg-gradient-to-r from-transparent via-secondary to-primary-container"></div>
+<span class="material-symbols-outlined text-secondary text-[16px] drop-shadow-[0_0_8px_#00eefc]">hotel_class</span>
+<span class="font-label-sm text-label-sm text-secondary-container tracking-widest uppercase">LEVEL 40 desbloqueado</span>
+<span class="material-symbols-outlined text-primary text-[16px] drop-shadow-[0_0_8px_#ff479c]">hotel_class</span>
+<div class="h-[2px] flex-1 bg-gradient-to-l from-transparent via-primary-container to-secondary"></div>
+</div>
+</section>
+<!-- VHS CRT TV Player Container (Optimized for Looping Video) -->
+<section class="vhs-responsive relative w-full rounded-xl bg-surface-container-lowest shadow-[0_0_24px_rgba(0,238,252,0.25)] overflow-hidden">
+<!-- CRT Bezel Header -->
+<div class="vhs-topbar responsive-row px-space-md py-space-xs bg-surface-container-high flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-error animate-pulse shadow-[0_0_8px_#ffb4ab]"></span>
+<span class="font-label-sm text-label-sm tracking-widest text-error">REC [00:40:00]</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary tracking-wider bg-surface-container px-2 py-0.5 rounded">SP - VHS HQ</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">CH 03</span>
+</div>
+</div>
+<!-- Video Stage -->
+<div class="relative w-full aspect-[9/16] bg-surface-container-lowest flex items-center justify-center overflow-hidden"><video autoplay="" class="w-full h-full object-cover" controls="" data-alt="Retro 1980s neon birthday party teaser visual with hot pink laser lights, synthwave grid, roller skates, chrome disco ball and confetti in electric midnight purple tones." id="vhsLoopVideo" loop="" muted="" playsinline="" src="https://res.cloudinary.com/urzwziyj/video/upload/v1790274529/MONICA_80.mp4"></video><div class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(13,11,34,0.7)_100%)]"></div><div class="absolute inset-0 pointer-events-none opacity-20 bg-[linear-gradient(rgba(18,16,40,0)_50%,rgba(0,0,0,0.8)_50%)] bg-[length:100%_4px]"></div><div class="absolute top-3 left-3 flex flex-col gap-1 pointer-events-none"><div class="flex items-center gap-1 text-secondary drop-shadow-[0_0_6px_#00eefc]"><span class="material-symbols-outlined text-[18px]">play_arrow</span><span class="font-label-md text-label-md tracking-wider">PLAY &gt;&gt;</span></div><span class="video-overlay-date font-label-sm text-label-sm text-on-surface/80 tracking-widest drop-shadow-[0_0_4px_#000]">OCT 03 1984 - AUTO TRACKING</span></div><div class="absolute top-3 right-3"><span class="video-loop-label inline-flex items-center gap-1 font-label-sm text-label-sm text-on-primary bg-primary-container px-space-xs py-0.5 rounded-full shadow-[0_0_12px_rgba(255,71,156,0.8)]"><span class="material-symbols-outlined text-[14px]">repeat</span>VIDEO EN LOOP</span></div><div class="absolute bottom-3 right-3 flex items-center gap-2"><button aria-label="Activar Sonido" class="px-3 py-1.5 rounded-full bg-surface-container-highest/80 backdrop-blur-md text-secondary hover:text-on-surface flex items-center gap-1.5 shadow-[0_0_12px_rgba(0,238,252,0.4)] transition-all" id="videoSoundBtn"><span class="material-symbols-outlined text-[16px]" id="soundIcon">volume_off</span><span class="video-sound-text font-label-sm text-label-sm tracking-wider uppercase" id="soundText">Mute</span></button><button aria-label="Pausar o Reanudar Video" class="w-8 h-8 rounded-full bg-surface-container-highest/80 backdrop-blur-md text-primary flex items-center justify-center shadow-[0_0_12px_rgba(255,176,202,0.4)]" id="videoPauseBtn"><span class="material-symbols-outlined text-[16px]" id="pauseIcon">pause</span></button></div><div class="absolute bottom-3 left-3 pointer-events-none"><span class="font-label-sm text-label-sm text-primary tracking-widest uppercase drop-shadow-[0_0_6px_#ff479c]">MIXTAPE CAM 01</span></div></div>
+<!-- CRT Dial & Speaker Grille Bottom Bar -->
+<div class="vhs-bottombar responsive-row px-space-md py-space-sm bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_6px_#00eefc]"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">RETRO-VISION 4000</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-1.5 h-3 bg-surface-container-highest rounded-sm"></span>
+<span class="w-1.5 h-3 bg-surface-container-highest rounded-sm"></span>
+<span class="w-1.5 h-3 bg-surface-container-highest rounded-sm"></span>
+<span class="w-1.5 h-3 bg-secondary rounded-sm shadow-[0_0_6px_#00eefc]"></span>
+<span class="w-1.5 h-3 bg-primary-container rounded-sm shadow-[0_0_6px_#ff479c]"></span>
+</div>
+</div>
+</section>
+<!-- Coordinates & Date Neon Card -->
+<section class="flex flex-col gap-space-sm">
+<div class="rounded-xl p-space-md bg-surface-container-low shadow-[0_0_20px_rgba(181,110,255,0.15)] flex flex-col gap-space-sm">
+<div class="details-heading responsive-row flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">pin_drop</span> COORDENADAS DEL PARTY</span>
+<span class="font-label-sm text-label-sm text-primary-container px-2 py-0.5 rounded bg-surface-container-high font-bold">1986 &gt; 2026</span>
+</div>
+<!-- Quick Details Grid -->
+<div class="details-grid grid grid-cols-2 gap-space-xs mt-1">
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Fecha</span>
+<span class="font-headline-sm text-headline-sm text-secondary drop-shadow-[0_0_6px_rgba(0,238,252,0.4)]">Sáb. 03</span>
+<span class="font-body-sm text-body-sm text-on-surface">Octubre 2026</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Hora de Acceso</span>
+<span class="font-headline-sm text-headline-sm text-primary drop-shadow-[0_0_6px_rgba(255,71,156,0.4)]">3:00 PM</span>
+<span class="font-body-sm text-body-sm text-on-surface">Hasta el amanecer</span>
+</div>
+</div>
+<!-- Venue Title Card -->
+<div class="bg-surface-container p-space-sm rounded-lg flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary shrink-0 shadow-[0_0_10px_rgba(0,238,252,0.3)]">
+<span class="material-symbols-outlined text-[24px]">villa</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">Lugar Oficial</span>
+<h3 class="allow-wrap font-headline-sm text-headline-sm text-on-surface">Casa de Eventos <br>Reyes Laverde</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ambiente cerrado, zona lounge neón &amp; pista arcade</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 80s Digital LED Countdown Matrix -->
+<section class="flex flex-col gap-space-xs">
+<div class="countdown-heading responsive-row flex items-center justify-between px-1">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">alarm</span> CONTEO REGRESIVO RETRO
+      </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">T-MINUS LEVEL 40</span>
+</div>
+<!-- Digital segment boxes -->
+<div class="countdown-grid grid grid-cols-4 gap-2 bg-surface-container-lowest p-space-md rounded-xl shadow-[0_0_16px_rgba(255,71,156,0.2)]">
+<!-- Days -->
+<div class="flex flex-col items-center justify-center p-2 rounded bg-surface-container-high">
+<span class="font-headline-md text-headline-md text-primary drop-shadow-[0_0_10px_#ff479c]" id="cd-days">18</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider mt-1">DÍAS</span>
+</div>
+<!-- Hours -->
+<div class="flex flex-col items-center justify-center p-2 rounded bg-surface-container-high">
+<span class="font-headline-md text-headline-md text-secondary drop-shadow-[0_0_10px_#00eefc]" id="cd-hours">07</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider mt-1">HORAS</span>
+</div>
+<!-- Minutes -->
+<div class="flex flex-col items-center justify-center p-2 rounded bg-surface-container-high">
+<span class="font-headline-md text-headline-md text-tertiary drop-shadow-[0_0_10px_#b56eff]" id="cd-minutes">38</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider mt-1">MIN</span>
+</div>
+<!-- Seconds -->
+<div class="flex flex-col items-center justify-center p-2 rounded bg-surface-container-high">
+<span class="font-headline-md text-headline-md text-primary-fixed drop-shadow-[0_0_10px_#ffb0ca]" id="cd-seconds">35</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider mt-1">SEG</span>
+</div>
+</div>
+</section>
+<!-- Dress Code: 80s Retro Chic -->
+<section class="rounded-xl p-space-md bg-surface-container-low shadow-[0_0_24px_rgba(255,71,156,0.25)] flex flex-col gap-space-sm">
+  <!-- Header Title -->
+  <div class="mixtape-heading responsive-row flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary text-[22px] drop-shadow-[0_0_8px_#ff479c]">album</span>
+      <h3 class="font-headline-sm text-headline-sm text-on-surface">Mixtape Oficial: Hits 80s</h3>
+    </div>
+    <span class="font-label-sm text-label-sm text-secondary uppercase bg-surface-container px-2 py-0.5 rounded tracking-widest border border-secondary-container/20">SIDE A</span>
+  </div>
+
+  <!-- Authentic 80s Realistic Audio Cassette Shell -->
+  <div class="cassette-card relative rounded-xl bg-[#18162d] border-2 border-[#3d3863] p-3 shadow-[0_8px_30px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col select-none">
+    <!-- Cassette Corner Screws -->
+    <div class="absolute top-2 left-2 w-3 h-3 rounded-full bg-gradient-to-br from-gray-300 via-gray-500 to-gray-700 shadow flex items-center justify-center z-20 opacity-90">
+      <div class="w-2 h-[1.5px] bg-[#1a1829] rotate-45"></div>
+    </div>
+    <div class="absolute top-2 right-2 w-3 h-3 rounded-full bg-gradient-to-br from-gray-300 via-gray-500 to-gray-700 shadow flex items-center justify-center z-20 opacity-90">
+      <div class="w-2 h-[1.5px] bg-[#1a1829] -rotate-12"></div>
+    </div>
+    <div class="absolute bottom-2 left-2 w-3 h-3 rounded-full bg-gradient-to-br from-gray-300 via-gray-500 to-gray-700 shadow flex items-center justify-center z-20 opacity-90">
+      <div class="w-2 h-[1.5px] bg-[#1a1829] rotate-90"></div>
+    </div>
+    <div class="absolute bottom-2 right-2 w-3 h-3 rounded-full bg-gradient-to-br from-gray-300 via-gray-500 to-gray-700 shadow flex items-center justify-center z-20 opacity-90">
+      <div class="w-2 h-[1.5px] bg-[#1a1829] rotate-30"></div>
+    </div>
+    <div class="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-gradient-to-br from-gray-300 via-gray-500 to-gray-700 shadow flex items-center justify-center z-20 opacity-80">
+      <div class="w-1.5 h-[1.5px] bg-[#1a1829] -rotate-45"></div>
+    </div>
+
+    <!-- Side Ribs Texture (Grip Ridges) -->
+    <div class="absolute left-0 top-1/4 bottom-1/4 w-1.5 flex flex-col justify-between opacity-30 pointer-events-none py-2">
+      <div class="w-full h-1 bg-white"></div><div class="w-full h-1 bg-white"></div><div class="w-full h-1 bg-white"></div><div class="w-full h-1 bg-white"></div><div class="w-full h-1 bg-white"></div>
+    </div>
+    <div class="absolute right-0 top-1/4 bottom-1/4 w-1.5 flex flex-col justify-between opacity-30 pointer-events-none py-2">
+      <div class="w-full h-1 bg-white"></div><div class="w-full h-1 bg-white"></div><div class="w-full h-1 bg-white"></div><div class="w-full h-1 bg-white"></div><div class="w-full h-1 bg-white"></div>
+    </div>
+
+    <!-- Vintage Paper Sticker Label -->
+    <div class="relative w-full rounded-lg bg-[#f6f2e9] text-[#121028] p-3 pt-2 shadow-[inset_0_2px_6px_rgba(0,0,0,0.4)] overflow-hidden border border-[#d3cbbe]">
+      <!-- Neon 80s Tri-Color Retro Stripes -->
+      <div class="absolute top-0 left-0 right-0 h-3.5 flex flex-col shadow-sm">
+        <div class="h-1 bg-[#ff479c]"></div>
+        <div class="h-1 bg-[#00eefc]"></div>
+        <div class="h-1.5 bg-[#ffd027]"></div>
+      </div>
+
+      <!-- Top Cassette Label Meta -->
+      <div class="cassette-meta responsive-row flex items-center justify-between pt-2.5 px-1 font-label-sm text-label-sm tracking-wider">
+        <div class="flex items-center gap-1 font-bold text-[#b90068]">
+          <span class="px-1.5 py-0.5 rounded bg-[#121028] text-[#ffd9e3] text-[10px]">C-90</span>
+          <span class="tracking-widest uppercase font-mono text-[11px]">SUPER CHROME</span>
+        </div>
+        <div class="flex items-center gap-1.5 text-[10px] font-mono font-bold text-[#121028]">
+          <span class="">STEREO</span>
+          <span class="px-1 border border-[#121028] rounded-sm">DOLBY B-NR</span>
+          <span class="px-1.5 py-0.5 rounded bg-[#ff479c] text-white font-bold text-[10px]">A</span>
+        </div>
+      </div>
+
+      <!-- Handwritten / Typewriter Track Title Banner -->
+      <div class="cassette-track responsive-row mt-2 bg-white/90 border-b border-dashed border-[#ff479c]/60 px-2.5 py-1.5 rounded flex items-center justify-between shadow-sm">
+        <div class="flex flex-col min-w-0">
+          <span class="font-label-sm text-[10px] tracking-widest uppercase text-[#ff479c] font-bold">TRACK ACTUAL // 80s VIBES</span>
+          <span class="font-headline-sm text-headline-sm text-[#121028] font-bold tracking-tight truncate" id="mixtapeTrackTitle">Take On Me</span>
+        </div>
+        <span class="font-label-sm text-[11px] font-mono text-[#5b3f48] shrink-0 ml-2 bg-[#ffebf3] px-2 py-0.5 rounded" id="mixtapeArtist">A-ha • 1985</span>
+      </div>
+
+      <!-- Clear Smoked Center Viewing Window (Tape Spools + Tape Bridge) -->
+      <div class="cassette-window relative mt-2.5 mb-1 mx-auto w-full max-w-[280px] h-20 rounded-md bg-[#0a0918]/90 border-2 border-[#2b274c] shadow-[inset_0_4px_12px_rgba(0,0,0,0.9)] flex items-center justify-between px-3 overflow-hidden">
+        <!-- Magnetic Tape Strip Running Across -->
+        <div class="absolute top-1/2 left-8 right-8 -translate-y-1/2 h-4 bg-[#231713] border-t border-b border-[#3d2922] opacity-90 shadow-sm pointer-events-none"></div>
+
+        <!-- Left Spool Assembly -->
+        <div class="spool relative z-10 w-12 h-12 rounded-full bg-[#3d271e] p-[2px] shadow-[0_0_8px_rgba(0,0,0,0.8)] flex items-center justify-center animate-[spin_6s_linear_infinite]">
+          <div class="w-9 h-9 rounded-full bg-[#fdfdfd] border-2 border-[#cccccc] flex items-center justify-center relative shadow-inner">
+            <!-- Spool 6 Triangular Driving Teeth -->
+            <div class="absolute w-2 h-2.5 bg-[#121028] rounded-sm top-0.5"></div>
+            <div class="absolute w-2 h-2.5 bg-[#121028] rounded-sm bottom-0.5"></div>
+            <div class="absolute w-2 h-2.5 bg-[#121028] rounded-sm left-0.5 rotate-90"></div>
+            <div class="absolute w-2 h-2.5 bg-[#121028] rounded-sm right-0.5 rotate-90"></div>
+            <div class="w-4 h-4 rounded-full bg-[#0a0918] border border-gray-400 flex items-center justify-center">
+              <div class="w-2 h-2 rounded-full bg-white/40"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Tape Level Ruler & Scale Lines -->
+        <div class="relative z-10 flex flex-col items-center justify-center gap-1 font-mono text-[9px] text-[#ffb0ca] tracking-widest select-none pointer-events-none">
+          <div class="flex items-center gap-3 text-secondary drop-shadow-[0_0_4px_#00eefc]">
+            <span class="">100</span><span class="">50</span><span class="">0</span>
+          </div>
+          <div class="flex items-center gap-1 w-20 justify-between">
+            <div class="w-1 h-3 bg-secondary/80"></div>
+            <div class="w-[1px] h-2 bg-white/40"></div>
+            <div class="w-[1px] h-2 bg-white/40"></div>
+            <div class="w-1 h-3 bg-primary/90"></div>
+            <div class="w-[1px] h-2 bg-white/40"></div>
+            <div class="w-[1px] h-2 bg-white/40"></div>
+            <div class="w-1 h-3 bg-secondary/80"></div>
+          </div>
+          <span class="text-[8px] text-white/70 uppercase tracking-widest mt-0.5">TAPE COUNTER</span>
+        </div>
+
+        <!-- Right Spool Assembly -->
+        <div class="spool relative z-10 w-12 h-12 rounded-full bg-[#201511] p-[2px] shadow-[0_0_8px_rgba(0,0,0,0.8)] flex items-center justify-center animate-[spin_6s_linear_infinite]">
+          <div class="w-9 h-9 rounded-full bg-[#fdfdfd] border-2 border-[#cccccc] flex items-center justify-center relative shadow-inner">
+            <!-- Spool 6 Triangular Driving Teeth -->
+            <div class="absolute w-2 h-2.5 bg-[#121028] rounded-sm top-0.5"></div>
+            <div class="absolute w-2 h-2.5 bg-[#121028] rounded-sm bottom-0.5"></div>
+            <div class="absolute w-2 h-2.5 bg-[#121028] rounded-sm left-0.5 rotate-90"></div>
+            <div class="absolute w-2 h-2.5 bg-[#121028] rounded-sm right-0.5 rotate-90"></div>
+            <div class="w-4 h-4 rounded-full bg-[#0a0918] border border-gray-400 flex items-center justify-center">
+              <div class="w-2 h-2 rounded-full bg-white/40"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Cassette Label Tagline -->
+      <div class="cassette-footer flex items-center justify-between text-[9px] font-mono text-[#776c5d] pt-1 px-1">
+        <span class="">HIGH ENERGY BIAS 70µs</span>
+        <span class="font-bold tracking-wider text-[#ff479c]">RECORDED ON LEVEL 40 SOUND</span>
+        <span class="">MADE IN 1986</span>
+      </div>
+    </div>
+
+    <!-- Cassette Trapezoid Lower Head Access Area -->
+    <div class="cassette-head-access relative mt-2 mx-auto w-48 h-6 bg-[#0e0c1f] rounded-t border-t border-x border-[#383359] flex items-center justify-around px-4 shadow-inner">
+      <div class="w-2.5 h-2.5 rounded-full bg-[#1b1930] border border-[#524c7a]"></div>
+      <div class="w-8 h-2 rounded-sm bg-[#1b1930] border border-[#524c7a]"></div>
+      <div class="w-2.5 h-2.5 rounded-full bg-[#1b1930] border border-[#524c7a]"></div>
+    </div>
+  </div>
+
+  <!-- Glowing Audio Progress Timeline Bar -->
+  <div class="flex flex-col gap-1 px-1 mt-1">
+    <div class="flex justify-between items-center font-label-sm text-[10px] text-on-surface-variant font-mono">
+      <span class="text-secondary drop-shadow-[0_0_6px_#00eefc]">02:14</span>
+      <span class="text-primary">03:45</span>
+    </div>
+    <div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden p-[1px] shadow-inner">
+      <div class="bg-gradient-to-r from-primary via-primary-container to-secondary w-2/3 h-full rounded-full shadow-[0_0_10px_#00eefc]"></div>
+    </div>
+  </div>
+
+  <!-- 80s Cassette Deck Mechanical Piano Keys / Transport Controls -->
+  <div class="grid grid-cols-3 gap-2 pt-1">
+    <button aria-label="Pista anterior" class="h-11 rounded-lg bg-surface-container border-b-4 border-[#0d0b22] active:border-b-0 active:translate-y-1 text-on-surface hover:text-secondary flex flex-col items-center justify-center transition-all shadow-md" id="prevTrackBtn">
+      <span class="material-symbols-outlined text-[20px]">fast_rewind</span>
+      <span class="font-label-sm text-[9px] tracking-wider uppercase text-on-surface-variant">REWIND</span>
+    </button>
+    <button aria-label="Reproducir playlist" class="h-11 rounded-lg bg-primary-container border-b-4 border-[#640036] active:border-b-0 active:translate-y-1 text-on-primary flex flex-col items-center justify-center shadow-[0_0_16px_rgba(255,71,156,0.6)] transition-all hover:scale-[1.02]" id="playTrackBtn">
+      <span class="material-symbols-outlined text-[22px]" id="playIcon">pause</span>
+      <span class="font-label-sm text-[9px] tracking-wider uppercase font-bold">PLAY / PAUSE</span>
+    </button>
+    <button aria-label="Siguiente pista" class="h-11 rounded-lg bg-surface-container border-b-4 border-[#0d0b22] active:border-b-0 active:translate-y-1 text-on-surface hover:text-secondary flex flex-col items-center justify-center transition-all shadow-md" id="nextTrackBtn">
+      <span class="material-symbols-outlined text-[20px]">fast_forward</span>
+      <span class="font-label-sm text-[9px] tracking-wider uppercase text-on-surface-variant">FORWARD</span>
+    </button>
+  </div>
+
+  <!-- Tracklist Items -->
+  <div class="flex flex-col gap-1.5 pt-1">
+    <div class="track-item responsive-row flex items-center justify-between p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors">
+      <div class="flex items-center gap-2">
+        <span class="font-label-sm text-label-sm text-primary font-bold">01</span>
+        <span class="font-body-sm text-body-sm text-on-surface font-medium">Girls Just Want to Have Fun</span>
+      </div>
+      <span class="font-label-sm text-label-sm text-on-surface-variant">Cyndi Lauper</span>
+    </div>
+    <div class="track-item responsive-row flex items-center justify-between p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors">
+      <div class="flex items-center gap-2">
+        <span class="font-label-sm text-label-sm text-secondary font-bold">02</span>
+        <span class="font-body-sm text-body-sm text-on-surface font-medium">Billie Jean</span>
+      </div>
+      <span class="font-label-sm text-label-sm text-on-surface-variant">Michael Jackson</span>
+    </div>
+    <div class="track-item responsive-row flex items-center justify-between p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors">
+      <div class="flex items-center gap-2">
+        <span class="font-label-sm text-label-sm text-tertiary font-bold">03</span>
+        <span class="font-body-sm text-body-sm text-on-surface font-medium">Sweet Child O' Mine</span>
+      </div>
+      <span class="font-label-sm text-label-sm text-on-surface-variant">Guns N' Roses</span>
+    </div>
+  </div>
+</section>
+<!-- Cassette Tape Mixtape Player -->
+
+<!-- Interactive RSVP VIP Section -->
+<section class="rounded-xl p-space-md bg-surface-container-low shadow-[0_0_24px_rgba(255,71,156,0.3)] flex flex-col gap-space-md relative overflow-hidden">
+<div class="rsvp-heading responsive-row flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">TICKET DE ACCESO VIP</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Confirma Tu Asistencia</h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary shadow-[0_0_10px_rgba(255,71,156,0.4)]">
+<span class="material-symbols-outlined text-[22px]">confirmation_number</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+      ¡El aforo de la pista synthwave es limitado! Regístrate para reservar tu brazalete de acceso y tus pases de bebidas.
+    </p>
+<!-- RSVP Form Elements -->
+<div class="flex flex-col gap-space-sm">
+<div>
+<label class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block mb-1" for="guestName">Nombre Completo del Invitado</label>
+<div class="bg-surface-container-lowest p-3 rounded-lg flex items-center gap-2 shadow-inner">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">badge</span>
+<input class="bg-transparent w-full text-on-surface placeholder:text-on-surface-variant/5xl focus:outline-none font-body-md text-body-md" id="guestName" placeholder="Ej: Marty McFly" type="text">
+</div>
+</div>
+<!-- Passes counter selector -->
+<div>
+<label class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block mb-1">Pases VIP Requeridos</label>
+<div class="flex items-center justify-between bg-surface-container-lowest p-2 rounded-lg">
+<button aria-label="Restar pase" class="w-9 h-9 rounded bg-surface-container text-on-surface hover:text-secondary flex items-center justify-center" id="minusPassBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="passCount">1 PASE</span>
+<button aria-label="Añadir pase" class="w-9 h-9 rounded bg-surface-container text-on-surface hover:text-secondary flex items-center justify-center" id="plusPassBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Drinks / Song Request -->
+<div>
+<label class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block mb-1" for="songRequest">Canción de los 80s que no puede faltar</label>
+<div class="bg-surface-container-lowest p-3 rounded-lg flex items-center gap-2 shadow-inner">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">music_note</span>
+<input class="bg-transparent w-full text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none font-body-md text-body-md" id="songRequest" placeholder="Ej: Don't Stop Believin'" type="text">
+</div>
+</div>
+<!-- Main Neon RSVP Action Button -->
+<button class="mt-2 w-full py-3.5 px-space-md rounded-full bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,71,156,0.85)] active:scale-95 transition-all" id="rsvpSubmitBtn">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span class="">CONFIRMAR POR WHATSAPP (RSVP)</span>
+</button>
+<!-- Confirmation Feedback Toast Box -->
+<div class="hidden p-3 rounded-lg bg-surface-container-highest text-secondary flex items-center gap-2 text-body-sm font-body-sm" id="rsvpStatusAlert">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="">¡Genial! Redirigiendo a la confirmación de la fiesta...</span>
+</div>
+</div>
+</section>
+<!-- Venue Location & Map Card -->
+<!-- Friendly Celebrant Note & Signature -->
+<footer class="flex flex-col items-center text-center p-space-md rounded-xl bg-surface-container-lowest shadow-inner gap-space-xs mb-space-sm">
+<span class="material-symbols-outlined text-primary text-[28px] drop-shadow-[0_0_8px_#ff479c]">favorite</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">"Los 40 son los nuevos 20... ¡pero con la mejor música de la historia!"</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
+      Trae tu mejor energía, tus pasos de baile y prepárate para una noche inolvidable de sintetizadores y recuerdos.
+    </p>
+<div class="mt-2 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container text-secondary">
+<span class="font-label-sm text-label-sm tracking-widest uppercase">#Mis40EnLos80s • #Totally80s</span>
+</div>
+</footer>
+</div>
+<!-- Client-side Interactive Logic -->
+<script>
+  // Video Audio Toggle and Pause Controls
+  const loopVideo = document.getElementById('vhsLoopVideo');
+  const soundBtn = document.getElementById('videoSoundBtn');
+  const soundIcon = document.getElementById('soundIcon');
+  const soundText = document.getElementById('soundText');
+  const pauseBtn = document.getElementById('videoPauseBtn');
+  const pauseIcon = document.getElementById('pauseIcon');
+
+  if (soundBtn && loopVideo) {
+    soundBtn.addEventListener('click', () => {
+      loopVideo.muted = !loopVideo.muted;
+      if (loopVideo.muted) {
+        soundIcon.textContent = 'volume_off';
+        soundText.textContent = 'Mute';
+      } else {
+        soundIcon.textContent = 'volume_up';
+        soundText.textContent = 'Audio ON';
+      }
+    });
+  }
+
+  if (pauseBtn && loopVideo) {
+    pauseBtn.addEventListener('click', () => {
+      if (loopVideo.paused) {
+        loopVideo.play();
+        pauseIcon.textContent = 'pause';
+      } else {
+        loopVideo.pause();
+        pauseIcon.textContent = 'play_arrow';
+      }
+    });
+  }
+
+  // Interactive Ticket Counter
+  let passes = 1;
+  const passCountEl = document.getElementById('passCount');
+  const minusBtn = document.getElementById('minusPassBtn');
+  const plusBtn = document.getElementById('plusPassBtn');
+
+  if (minusBtn && plusBtn && passCountEl) {
+    minusBtn.addEventListener('click', () => {
+      if (passes > 1) {
+        passes--;
+        passCountEl.textContent = passes === 1 ? '1 PASE' : passes + ' PASES';
+      }
+    });
+    plusBtn.addEventListener('click', () => {
+      if (passes < 6) {
+        passes++;
+        passCountEl.textContent = passes + ' PASES';
+      }
+    });
+  }
+
+  // RSVP Form WhatsApp trigger
+  const rsvpSubmitBtn = document.getElementById('rsvpSubmitBtn');
+  const rsvpAlert = document.getElementById('rsvpStatusAlert');
+  if (rsvpSubmitBtn) {
+    rsvpSubmitBtn.addEventListener('click', () => {
+      const name = document.getElementById('guestName').value || 'Amigo/a';
+      const song = document.getElementById('songRequest').value || 'Hits de los 80s';
+      
+      if (rsvpAlert) {
+        rsvpAlert.classList.remove('hidden');
+      }
+
+      const msg = encodeURIComponent(`¡Hola! Confirmo mi asistencia para '¡Mis 40 en los 80s!'. Nombre: ${name} | Pases: ${passes} | Canción sugerida: ${song}`);
+      setTimeout(() => {
+        window.open(`https://api.whatsapp.com/send?text=${msg}`, '_blank');
+      }, 700);
+    });
+  }
+
+  // Retro Countdown Timer Simulation
+  const daysEl = document.getElementById('cd-days');
+  const hoursEl = document.getElementById('cd-hours');
+  const minEl = document.getElementById('cd-minutes');
+  const secEl = document.getElementById('cd-seconds');
+
+  let s = 59;
+  let m = 42;
+  setInterval(() => {
+    s--;
+    if (s < 0) {
+      s = 59;
+      m--;
+      if (m < 0) m = 59;
+      if (minEl) minEl.textContent = String(m).padStart(2, '0');
+    }
+    if (secEl) secEl.textContent = String(s).padStart(2, '0');
+  }, 1000);
+
+  // Mixtape tracklist toggler
+  const tracks = [
+    { title: 'Take On Me', artist: 'A-ha • 1985' },
+    { title: 'Girls Just Want...', artist: 'Cyndi Lauper • 1983' },
+    { title: 'Billie Jean', artist: 'Michael Jackson • 1982' },
+    { title: 'Sweet Child O\' Mine', artist: 'Guns N\' Roses • 1987' }
+  ];
+  let currentTrackIdx = 0;
+  const trackTitleEl = document.getElementById('mixtapeTrackTitle');
+  const artistEl = document.getElementById('mixtapeArtist');
+  const nextTrackBtn = document.getElementById('nextTrackBtn');
+  const prevTrackBtn = document.getElementById('prevTrackBtn');
+  const playTrackBtn = document.getElementById('playTrackBtn');
+  const playIcon = document.getElementById('playIcon');
+
+  function updateTrack() {
+    if (trackTitleEl && artistEl) {
+      trackTitleEl.textContent = tracks[currentTrackIdx].title;
+      artistEl.textContent = tracks[currentTrackIdx].artist;
+    }
+  }
+
+  if (nextTrackBtn) {
+    nextTrackBtn.addEventListener('click', () => {
+      currentTrackIdx = (currentTrackIdx + 1) % tracks.length;
+      updateTrack();
+    });
+  }
+
+  if (prevTrackBtn) {
+    prevTrackBtn.addEventListener('click', () => {
+      currentTrackIdx = (currentTrackIdx - 1 + tracks.length) % tracks.length;
+      updateTrack();
+    });
+  }
+
+  let isPlaying = false;
+  if (playTrackBtn) {
+    playTrackBtn.addEventListener('click', () => {
+      isPlaying = !isPlaying;
+      playIcon.textContent = isPlaying ? 'pause' : 'play_arrow';
+    });
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.5)]" data-active-classes="text-primary drop-shadow-[0_0_8px_rgba(255,71,156,0.8)]"><div class="flex justify-around items-center h-20 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center gap-1 w-16 h-16 transition-colors text-primary drop-shadow-[0_0_8px_rgba(255,71,156,0.8)]" data-path="party-invite" href="#"><span class="material-symbols-outlined text-[22px]">celebration</span><span class="font-label-sm text-label-sm tracking-wider uppercase">Party</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-16 text-on-surface-variant hover:text-on-surface transition-colors" data-path="party-lineup" href="#"><span class="material-symbols-outlined text-[22px]">schedule</span><span class="font-label-sm text-label-sm tracking-wider uppercase">Track</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-16 text-on-surface-variant hover:text-on-surface transition-colors" data-path="mixtape-vault" href="#"><span class="material-symbols-outlined text-[22px]">mobile_share_stack</span><span class="font-label-sm text-label-sm tracking-wider uppercase">Mixtape</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-16 text-secondary hover:text-white transition-colors" data-path="arcade-rsvp" href="#"><span class="material-symbols-outlined text-[22px] drop-shadow-[0_0_6px_rgba(0,238,252,0.8)]">local_activity</span><span class="font-label-sm text-label-sm tracking-wider uppercase text-secondary font-bold">RSVP</span></a></div></nav>
+
+
+
+
+</body></html>
