@@ -74,6 +74,11 @@
       nav a span:last-child { font-size: .5rem !important; letter-spacing: .04em !important; }
     }
 
+    @media (max-width: 379px) {
+      .dress-grid { grid-template-columns: 1fr !important; }
+      .dress-code-section > div:last-child { align-items: flex-start !important; flex-direction: column; }
+    }
+
     @media (max-width: 339px) {
       header > div > div:first-child > div:nth-child(2), header > div > div:last-child > div { display: none; }
       .details-grid { grid-template-columns: 1fr !important; }
@@ -201,7 +206,65 @@
 </div>
 </div>
 </section>
-<!-- Dress Code: 80s Retro Chic -->
+<!-- Dress Code Oficial: 80s Retro Chic -->
+<section class="dress-code-section rounded-xl p-space-md bg-surface-container-low shadow-[0_0_24px_rgba(181,110,255,0.28)] flex flex-col gap-space-md border border-tertiary-container/20">
+  <div class="flex items-start justify-between gap-3">
+    <div class="flex items-start gap-2 min-w-0">
+      <span class="material-symbols-outlined text-primary text-[24px] drop-shadow-[0_0_8px_#ff479c] mt-1">checkroom</span>
+      <div class="min-w-0">
+        <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Dress Code Oficial</span>
+        <h3 class="font-headline-md text-headline-md text-on-surface leading-tight">Tu Mejor Pinta Ochentera</h3>
+      </div>
+    </div>
+    <span class="shrink-0 material-symbols-outlined text-secondary text-[24px] drop-shadow-[0_0_8px_#00eefc]">flare</span>
+  </div>
+
+  <div class="self-start inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-container text-on-primary shadow-[0_0_16px_rgba(255,71,156,0.65)]">
+    <span class="material-symbols-outlined text-[16px]">bolt</span>
+    <span class="font-label-sm text-label-sm uppercase tracking-wider">Premio al mejor look</span>
+  </div>
+
+  <p class="font-body-md text-body-md text-on-surface-variant">
+    ¡Saca del clóset tu look más auténtico de los 80s! No temas exagerar: peinados altos con laca, colores eléctricos y actitud retro.
+  </p>
+
+  <div class="dress-grid grid grid-cols-2 gap-2">
+    <article class="rounded-lg p-3 bg-surface-container border border-primary-container/25 shadow-[inset_0_0_16px_rgba(255,71,156,0.05)]">
+      <h4 class="font-label-sm text-label-sm text-primary uppercase tracking-wider flex items-center gap-1.5 mb-1">
+        <span class="material-symbols-outlined text-[17px]">fitness_center</span> Neón &amp; Aeróbic
+      </h4>
+      <p class="font-body-sm text-body-sm text-on-surface-variant">Licras fluorescentes, calentadores de piernas, vinchas y sudaderas multicolor.</p>
+    </article>
+    <article class="rounded-lg p-3 bg-surface-container border border-secondary-container/25 shadow-[inset_0_0_16px_rgba(0,238,252,0.05)]">
+      <h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider flex items-center gap-1.5 mb-1">
+        <span class="material-symbols-outlined text-[17px]">music_note</span> Rocker &amp; Punk
+      </h4>
+      <p class="font-body-sm text-body-sm text-on-surface-variant">Chaqueta de cuero o denim desgastado, taches, camisetas estampadas y botas.</p>
+    </article>
+    <article class="rounded-lg p-3 bg-surface-container border border-tertiary-container/25 shadow-[inset_0_0_16px_rgba(181,110,255,0.06)]">
+      <h4 class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider flex items-center gap-1.5 mb-1">
+        <span class="material-symbols-outlined text-[17px]">auto_awesome</span> Glam &amp; Disco
+      </h4>
+      <p class="font-body-sm text-body-sm text-on-surface-variant">Hombreras gigantes, lentejuelas brillantes, satén y melenas con volumen extremo.</p>
+    </article>
+    <article class="rounded-lg p-3 bg-surface-container border border-primary-fixed/25 shadow-[inset_0_0_16px_rgba(255,176,202,0.05)]">
+      <h4 class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider flex items-center gap-1.5 mb-1">
+        <span class="material-symbols-outlined text-[17px]">eyeglasses</span> Sunglasses
+      </h4>
+      <p class="font-body-sm text-body-sm text-on-surface-variant">Gafas tipo Wayfarer o persiana, riñoneras, guantes de encaje y zapatillas retro.</p>
+    </article>
+  </div>
+
+  <div class="flex items-center justify-between gap-3 rounded-lg bg-surface-container-high p-3">
+    <div class="flex items-center gap-2 min-w-0">
+      <span class="material-symbols-outlined text-secondary text-[20px]">mic</span>
+      <p class="font-body-sm text-body-sm text-on-surface">Concurso de disfraces en vivo durante la fiesta</p>
+    </div>
+    <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest shrink-0">#VIBES80S</span>
+  </div>
+</section>
+
+<!-- Mixtape Oficial: 80s -->
 <section class="rounded-xl p-space-md bg-surface-container-low shadow-[0_0_24px_rgba(255,71,156,0.25)] flex flex-col gap-space-sm">
   <!-- Header Title -->
   <div class="mixtape-heading responsive-row flex items-center justify-between">
